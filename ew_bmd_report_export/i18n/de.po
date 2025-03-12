@@ -1,0 +1,514 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ew_bmd_report_export
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-19 12:58+0000\n"
+"PO-Revision-Date: 2025-02-19 12:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ew_bmd_report_export
+#. odoo-python
+#: code:addons/ew_bmd_report_export/wizards/bmd_reports.py:0
+msgid "'Export All' feature is pending to develop"
+msgstr "Die Funktion 'Alles exportieren' steht zur Entwicklung an"
+
+#. module: ew_bmd_report_export
+#: model_terms:ir.ui.view,arch_db:ew_bmd_report_export.view_bmd_reports_form
+msgid ""
+"<i class=\"fa fa-check-circle-o text-success mr-2\"/>Generated successfully"
+msgstr ""
+"<i class=\"fa fa-check-circle-o text-success mr-2\"/>Erfolgreich generiert"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_account_setup_bank_manual_config__acc_type
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_res_partner_bank__acc_type
+msgid "Acc Type"
+msgstr "Typ"
+
+#. module: ew_bmd_report_export
+#: model:ir.model,name:ew_bmd_report_export.model_account_account
+msgid "Account"
+msgstr "Konto"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_reports__attachment_ids
+msgid "Attachments"
+msgstr "Anlagen"
+
+#. module: ew_bmd_report_export
+#: model:ir.ui.menu,name:ew_bmd_report_export.bmd_export_main_menu
+msgid "BMD Export"
+msgstr "BMD-Export"
+
+#. module: ew_bmd_report_export
+#: model:ir.model,name:ew_bmd_report_export.model_bmd_export_history
+msgid "BMD Export History"
+msgstr "BMD-Exportverlauf"
+
+#. module: ew_bmd_report_export
+#: model:ir.ui.menu,name:ew_bmd_report_export.menu_bmd_reports
+msgid "BMD Reports"
+msgstr "BMD-Berichte"
+
+#. module: ew_bmd_report_export
+#: model:ir.actions.act_window,name:ew_bmd_report_export.action_bmd_report_export_history
+#: model:ir.ui.menu,name:ew_bmd_report_export.menu_bmd_report_export_history
+msgid "BMD Reports History"
+msgstr "BMD-Berichtshistorie"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_account_tax__bmd_steuercode
+msgid "BMD Steuercode"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model,name:ew_bmd_report_export.model_res_partner_bank
+msgid "Bank Accounts"
+msgstr "Bankkonten"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__bmd_export_history__report__bank_moves
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__bmd_reports__report__bank_moves
+msgid "Bank Moves"
+msgstr "Bankbewegungen"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,help:ew_bmd_report_export.field_account_setup_bank_manual_config__acc_type
+#: model:ir.model.fields,help:ew_bmd_report_export.field_res_partner_bank__acc_type
+msgid ""
+"Bank account type: Normal or IBAN. Inferred from the bank account number."
+msgstr ""
+"Bankverbindungstyp: Normal oder IBAN. Abgeleitet von der Bankkontonummer."
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__bmd_export_history__report_type__csv
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__bmd_reports__report_type__csv
+msgid "CSV"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__bmd_export_history__report__cash_moves
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__bmd_reports__report__cash_moves
+msgid "Cash Moves"
+msgstr "Bargeldbewegungen"
+
+#. module: ew_bmd_report_export
+#: model_terms:ir.ui.view,arch_db:ew_bmd_report_export.view_bmd_report_export_history_form
+#: model_terms:ir.ui.view,arch_db:ew_bmd_report_export.view_bmd_report_export_history_tree
+#: model_terms:ir.ui.view,arch_db:ew_bmd_report_export.view_bmd_reports_form
+msgid "Choose Report"
+msgstr "Wählen Sie Bericht"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_account_account__code
+msgid "Code"
+msgstr "Code"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_export_history__company_id
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_reports__company_id
+msgid "Company"
+msgstr "Unternehmen"
+
+#. module: ew_bmd_report_export
+#: model:ir.model,name:ew_bmd_report_export.model_res_partner
+msgid "Contact"
+msgstr "Kontakt"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_res_partner__contact_type
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_res_users__contact_type
+msgid "Contact Type"
+msgstr "Kontakttyp"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_export_history__create_uid
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_reports__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_export_history__create_date
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_reports__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__res_partner__contact_type__vendor
+msgid "Creditor"
+msgstr "Gläubiger"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_res_partner__creditor_number
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_res_users__creditor_number
+msgid "Creditor Number"
+msgstr "Kreditorennummer"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_res_partner__bmd_exported_customer
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_res_users__bmd_exported_customer
+msgid "Customer Exported to BMD"
+msgstr "Kunde nach BMD exportiert"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_res_partner__bmd_reexport_customer
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_res_users__bmd_reexport_customer
+msgid "Customer Needs to reexport to BMD"
+msgstr "Kunde muss erneut an BMD exportieren"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__bmd_export_history__report__customers
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__bmd_reports__report__customers
+msgid "Customers"
+msgstr "Kunden"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_export_history__date_from
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_reports__date_from
+msgid "Date From"
+msgstr "Stammen aus"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_export_history__date_to
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_reports__date_to
+msgid "Date To"
+msgstr "Datum bis"
+
+#. module: ew_bmd_report_export
+#: model_terms:ir.ui.view,arch_db:ew_bmd_report_export.view_bmd_report_export_history_form
+#: model_terms:ir.ui.view,arch_db:ew_bmd_report_export.view_bmd_report_export_history_tree
+#: model_terms:ir.ui.view,arch_db:ew_bmd_report_export.view_bmd_reports_form
+msgid "Dates"
+msgstr "Termine"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__res_partner__contact_type__customer
+msgid "Debtor"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_res_partner__debtor_number
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_res_users__debtor_number
+msgid "Debtor Number"
+msgstr "Debitorennummer"
+
+#. module: ew_bmd_report_export
+#: model_terms:ir.ui.view,arch_db:ew_bmd_report_export.view_bmd_reports_form
+msgid "Discard"
+msgstr "Verwerfen"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_export_history__display_name
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_reports__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.actions.act_window,name:ew_bmd_report_export.action_export_bmd_reports
+#: model:ir.ui.menu,name:ew_bmd_report_export.main_menu_export_bmd_reports
+#: model_terms:ir.ui.view,arch_db:ew_bmd_report_export.view_bmd_report_export_history_form
+#: model_terms:ir.ui.view,arch_db:ew_bmd_report_export.view_bmd_reports_form
+msgid "Export - BMD Reports"
+msgstr "Exportieren - BMD-Berichte"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__bmd_export_history__report__export_all
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__bmd_reports__report__export_all
+msgid "Export All"
+msgstr "Alles exportieren"
+
+#. module: ew_bmd_report_export
+#: model:ir.model,name:ew_bmd_report_export.model_bmd_reports
+msgid "Export BMD Report"
+msgstr "BMD-Bericht exportieren"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_export_history__export_data
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_reports__export_data
+msgid "Export Data"
+msgstr "Daten exportieren"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_export_history__export_date
+msgid "Export Date"
+msgstr "Exportdatum"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_account_move_line__bmd_exported_bank_move
+msgid "Exported Bank moves Ledger to BMD"
+msgstr "Exportierte Bank verschiebt Ledger zu BMD"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_account_move_line__bmd_exported_cash_move
+msgid "Exported Cash moves Ledger to BMD"
+msgstr "Exportiertes Bargeld verschiebt das Hauptbuch zu BMD"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_account_move_line__bmd_exported_general_ledger
+msgid "Exported General Ledger to BMD"
+msgstr "Hauptbuch nach BMD exportiert"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_account_move_line__bmd_exported_in_move
+msgid "Exported In moves Ledger to BMD"
+msgstr "Exportiert in Verschiebungs-Ledger zu BMD"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_account_move_line__bmd_exported_out_move
+msgid "Exported Out moves Ledger to BMD"
+msgstr "Exportiert - Verschiebt Ledger zu BMD"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_export_history__file_datas
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_reports__file_datas
+msgid "File Datas"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_export_history__fname
+msgid "Fname"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__bmd_export_history__export_data__export_all
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__bmd_reports__export_data__export_all
+msgid "Force Export All"
+msgstr "Alles exportieren erzwingen"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__bmd_export_history__report__general_ledger
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__bmd_reports__report__general_ledger
+msgid "General Ledger"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model_terms:ir.ui.view,arch_db:ew_bmd_report_export.view_bmd_report_export_history_form
+#: model_terms:ir.ui.view,arch_db:ew_bmd_report_export.view_bmd_reports_form
+msgid "Generate Report"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_export_history__id
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_reports__id
+msgid "ID"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__bmd_export_history__report__in_invoices
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__bmd_reports__report__in_invoices
+msgid "In Invoices"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model,name:ew_bmd_report_export.model_account_move_line
+msgid "Journal Item"
+msgstr "Buchungszeile"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_export_history__write_uid
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_reports__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_export_history__write_date
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_reports__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_export_history__needs_regenerate
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_reports__needs_regenerate
+msgid "Needs Regenerate"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_account_move_line__bmd_reexport_bank_move
+msgid "Needs to Reexport Bank moves to BMD"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_account_move_line__bmd_reexport_cash_move
+msgid "Needs to Reexport Cash moves to BMD"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_account_move_line__bmd_reexport_general_ledger
+msgid "Needs to Reexport General Ledger to BMD"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_account_move_line__bmd_reexport_in_move
+msgid "Needs to Reexport In moves to BMD"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_account_move_line__bmd_reexport_out_move
+msgid "Needs to Reexport Out moves to BMD"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__res_partner__contact_type__none
+msgid "None"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__bmd_export_history__export_data__un_exported
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__bmd_reports__export_data__un_exported
+msgid "Only Un-Exported"
+msgstr "Nur nicht exportierte"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__bmd_export_history__report__out_invoices
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__bmd_reports__report__out_invoices
+msgid "Out Invoices"
+msgstr "Ausgehende Rechnungen"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_export_history__report
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_reports__report
+msgid "Report"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_export_history__report_type
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_reports__report_type
+msgid "Report Type"
+msgstr "Berichtstyp"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_res_partner__bmd_exported_supplier
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_res_users__bmd_exported_supplier
+msgid "Supplier Exported to BMD"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_res_partner__bmd_reexport_supplier
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_res_users__bmd_reexport_supplier
+msgid "Supplier Needs to reexport to BMD"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__bmd_export_history__report__suppliers
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__bmd_reports__report__suppliers
+msgid "Suppliers"
+msgstr "Lieferanten"
+
+#. module: ew_bmd_report_export
+#: model:ir.model,name:ew_bmd_report_export.model_account_tax
+msgid "Tax"
+msgstr "Steuer"
+
+#. module: ew_bmd_report_export
+#: model_terms:ir.ui.view,arch_db:ew_bmd_report_export.view_bmd_reports_form
+msgid ""
+"This will export all the\n"
+"                                data created or modified\n"
+"                                <br/>\n"
+"                                between the selected date-range."
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,help:ew_bmd_report_export.field_res_partner__bmd_exported_customer
+#: model:ir.model.fields,help:ew_bmd_report_export.field_res_users__bmd_exported_customer
+msgid "True if the customer data is already exported for BMD"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,help:ew_bmd_report_export.field_res_partner__bmd_reexport_customer
+#: model:ir.model.fields,help:ew_bmd_report_export.field_res_users__bmd_reexport_customer
+msgid ""
+"True if the customer data is updated and needs to be reexported for BMD"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,help:ew_bmd_report_export.field_account_move_line__bmd_exported_bank_move
+msgid "True if the data is already exported for Bank moves to BMD"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,help:ew_bmd_report_export.field_account_move_line__bmd_exported_cash_move
+msgid "True if the data is already exported for Cash moves to BMD"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,help:ew_bmd_report_export.field_account_move_line__bmd_exported_in_move
+msgid "True if the data is already exported for In moves to BMD"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,help:ew_bmd_report_export.field_account_move_line__bmd_exported_out_move
+msgid "True if the data is already exported for Out moves to BMD"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,help:ew_bmd_report_export.field_account_move_line__bmd_exported_general_ledger
+msgid "True if the data is already exported for general ledger to BMD"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,help:ew_bmd_report_export.field_account_move_line__bmd_reexport_bank_move
+msgid ""
+"True if the data is updated and needs to be reexported for Bank moves to BMD"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,help:ew_bmd_report_export.field_account_move_line__bmd_reexport_cash_move
+msgid ""
+"True if the data is updated and needs to be reexported for Cash moves to BMD"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,help:ew_bmd_report_export.field_account_move_line__bmd_reexport_in_move
+#: model:ir.model.fields,help:ew_bmd_report_export.field_account_move_line__bmd_reexport_out_move
+msgid ""
+"True if the data is updated and needs to be reexported for In moves to BMD"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,help:ew_bmd_report_export.field_account_move_line__bmd_reexport_general_ledger
+msgid ""
+"True if the data is updated and needs to be reexported for general ledger to"
+" BMD"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,help:ew_bmd_report_export.field_res_partner__bmd_exported_supplier
+#: model:ir.model.fields,help:ew_bmd_report_export.field_res_users__bmd_exported_supplier
+msgid "True if the supplier data is already exported for BMD"
+msgstr "Wahr, wenn die Lieferantendaten bereits für BMD exportiert wurden"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,help:ew_bmd_report_export.field_res_partner__bmd_reexport_supplier
+#: model:ir.model.fields,help:ew_bmd_report_export.field_res_users__bmd_reexport_supplier
+msgid ""
+"True if the supplier data is updated and needs to be reexported for BMD"
+msgstr ""
+"True, wenn die Lieferantendaten aktualisiert werden und für BMD erneut "
+"exportiert werden müssen"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__bmd_export_history__export_data__all_export
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__bmd_reports__export_data__all_export
+msgid "Un-Exported + Re-Export modified data"
+msgstr "Nicht exportierte + geänderte Daten erneut exportieren"
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields,field_description:ew_bmd_report_export.field_bmd_export_history__user_id
+msgid "User"
+msgstr ""
+
+#. module: ew_bmd_report_export
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__bmd_export_history__report_type__xlsx
+#: model:ir.model.fields.selection,name:ew_bmd_report_export.selection__bmd_reports__report_type__xlsx
+msgid "XLSX"
+msgstr ""

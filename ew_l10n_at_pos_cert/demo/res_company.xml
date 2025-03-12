@@ -1,0 +1,6 @@
+<odoo>
+    <record id="base.main_company" model="res.company">
+        <field name="country_id" ref="base.at" />
+        <field name="l10n_at_allow_multiple_registers" eval="True"/>
+    </record>
+</odoo>

@@ -1,0 +1,4 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"ew_bmd_report_export.access_bmd_reports","ew_bmd_report_export.access_bmd_reports","ew_bmd_report_export.model_bmd_reports","account.group_account_readonly",1,1,1,1
+"ew_bmd_report_export.access_bmd_export_history_user","ew_bmd_report_export.access_bmd_export_history","ew_bmd_report_export.model_bmd_export_history","account.group_account_readonly",1,1,1,1
+"ew_bmd_report_export.access_bmd_export_history_admin","ew_bmd_report_export.access_bmd_export_history","ew_bmd_report_export.model_bmd_export_history","base.group_system",1,1,1,1

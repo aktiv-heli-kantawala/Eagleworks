@@ -1,0 +1,17 @@
+<odoo>
+    <record id="register_rk1" model="ew_l10n_at_pos_cert.register">
+        <field name="name">RK1</field>
+        <field name="signature_device_id" ref="signature_device_sd1" />
+        <field name="pos_config_id" ref="pos_config_rksv1" />
+    </record>
+    <record id="register_rk2" model="ew_l10n_at_pos_cert.register">
+        <field name="name">RK2</field>
+        <field name="signature_device_id" ref="signature_device_sd1" />
+        <field name="pos_config_id" ref="pos_config_rksv2" />
+    </record>
+    <record id="register_rk3" model="ew_l10n_at_pos_cert.register">
+        <field name="name">RK3</field>
+        <field name="signature_device_id" ref="signature_device_sd1" />
+        <field name="pos_config_id" ref="pos_config_rksv2" />
+    </record>
+</odoo>

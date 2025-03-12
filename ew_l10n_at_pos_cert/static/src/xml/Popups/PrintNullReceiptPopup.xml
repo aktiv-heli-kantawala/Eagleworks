@@ -1,0 +1,44 @@
+<templates id="template" xml:space="preserve">
+    <t t-name="ew_l10n_at_pos_cert.PrintNullReceiptPopup" >
+        <Dialog size="'md'">
+            <t t-set-slot="header">
+                <t class="modal-title title">
+                    <t t-if="state.receiptType == 'START'">
+                        START RECEIPT
+                    </t>
+                    <t t-if="state.receiptType == 'NULL'">
+                        NULL RECEIPT
+                    </t>
+                    <t t-if="state.receiptType == 'MONTH'">
+                        MONTHLY NULL RECEIPT
+                    </t>
+                    <t t-if="state.receiptType == 'YEAR'">
+                        YEARLY NULL RECEIPT
+                    </t>
+                </t>
+            </t>
+            <div class="d-flex flex-column fs-4">
+                    <t t-if="state.receiptType == 'START'">
+                        Print Start Receipt
+                    </t>
+                    <t t-if="state.receiptType == 'NULL'">
+                        Print Null Receipt
+                    </t>
+                    <t t-if="state.receiptType == 'MONTH'">
+                        Print Monthly Null Receipt
+                    </t>
+                    <t t-if="state.receiptType == 'YEAR'">
+                        Print Yearly Null Receipt
+                    </t>
+                </div>
+            <t t-set-slot="footer">
+                <div class="w-100">
+                    <button class="button confirm btn btn-lg btn-primary float-end"
+                        t-on-click="confirm">
+                        Confirm
+                    </button>
+                </div>
+            </t>
+        </Dialog>
+    </t>
+</templates>

@@ -1,0 +1,39 @@
+<odoo>
+    <record id="view_pos_order_form" model="ir.ui.view">
+        <field name="name">pos.order.form</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+            <page name="extra" position="inside">
+                <group string="RKSV" name="l10n_at_group"/>
+                <notebook name="l10n_at_notebook"
+                          invisible="l10n_at_register_id == False">
+                    <page string="Signature">
+                        <group>
+                            <group>
+                                <field name="l10n_at_register_id"/>
+                                <field name="l10n_at_number"/>
+                                <field name="l10n_at_turnover"/>
+                            </group>
+                            <group>
+                                <field name="l10n_at_type"/>
+                                <field name="l10n_at_sd_not_available"/>
+                            </group>
+                        </group>
+                        <label for="l10n_at_jws_signature"/>
+                        <field name="l10n_at_jws_signature" readonly="1" class="w-100" style="word-wrap: break-word"/>
+                        <label for="l10n_at_mrc_signature"/>
+                        <field name="l10n_at_mrc_signature" readonly="1" class="w-100" style="word-wrap: break-word"/>
+                    </page>
+                    <page string="Certificate Issuer">
+                        <field name="l10n_at_certificate_issuer" nolabel="1" class="w-100"
+                               style="word-wrap: break-word"/>
+                    </page>
+                    <page string="Certificate">
+                        <field name="l10n_at_certificate" nolabel="1" class="w-100" style="word-wrap: break-word"/>
+                    </page>
+                </notebook>
+            </page>
+        </field>
+    </record>
+</odoo>

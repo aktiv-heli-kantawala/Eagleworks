@@ -1,0 +1,20 @@
+<odoo>
+    <record model="ir.ui.view" id="view_form_service_period_dates">
+        <field name="name">account.move.service.period.dates</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//sheet//group[@id='header_left_group']" position="inside">
+                <field name="enable_service_period"
+                       invisible="move_type not in ('out_invoice', 'out_refund', 'out_receipt')"/>
+                <field name="service_period_start"
+                       invisible="not enable_service_period or move_type not in ('out_invoice', 'out_refund', 'out_receipt')"
+                       widget="daterange" options="{'end_date_field': 'service_period_end'}"
+                       required="(service_period_start or service_period_end)"/>
+                <field name="service_period_end" invisible="1"/>
+                <field name="service_date"
+                       invisible="move_type not in ('out_invoice', 'out_refund', 'out_receipt') or enable_service_period"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

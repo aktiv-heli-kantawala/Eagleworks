@@ -1,0 +1,40 @@
+{
+    "name": "EagleWorks RKSV AT HSM",
+    "version": "18.0.1.0.0",
+    "author": "EagleWorks GmbH",
+    "license": "Other proprietary",
+    "category": "Accounting/Localizations/Point of Sale",
+    "website": "https://www.eagleworks.at",
+    "depends": ["l10n_at", "point_of_sale"],
+    "summary": "RKSV AT Erweiterung für PoS",
+    "description": "RKSV AT Erweiterung für PoS",
+    "contributors": ["Matthias Kolowrat <matthias.kolowrat@eagleworks.at>"],
+    "demo": [
+        "demo/res_company.xml",
+        "demo/signature_device.xml",
+        "demo/pos_config.xml",
+        "demo/register.xml",
+    ],
+    "data": [
+        "data/product_product.xml",
+        "security/ir.model.access.csv",
+        "views/pos_order.xml",
+        "views/pos_config.xml",
+        "views/fon_message.xml",
+        "views/signature_device.xml",
+        "views/register.xml",
+        "views/dep_check.xml",
+        "views/res_config_settings.xml",
+        "views/menu.xml",
+    ],
+    "assets": {
+        "point_of_sale._assets_pos": [
+            "ew_l10n_at_pos_cert/static/src/**/*",
+            "ew_l10n_at_pos_cert/static/lib/**/*",
+        ]
+    },
+    "external_dependencies": {"python": ["cryptography"], "bin": []},
+    "installable": True,
+    "auto_install": False,
+    "application": False,
+}

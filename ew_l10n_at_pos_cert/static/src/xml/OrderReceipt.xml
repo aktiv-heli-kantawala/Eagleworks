@@ -1,0 +1,19 @@
+<templates id="template" xml:space="preserve">
+    <t t-name="OrderReceipt" t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('before-footer')]" position="inside">
+            <t t-if="'l10n_at_mrc_signature' in props.data">
+                <div style="display: flex; justify-content: center;">
+                    <img t-att-src="props.data.l10n_at_mrc_qr"/>
+                </div>
+                <div>Receipt ID: <t t-esc="props.data.l10n_at_number" /></div>
+                <div>Register ID: <t t-esc="props.data.l10n_at_register_name" /></div>
+            </t>
+            <t t-elif="props.data['test_environment']">
+                This is a TEST receipt.
+            </t>
+            <t t-elif="props.data['l10n_at_issue']">
+                This receipt is invalid because of a RKSV issue.
+            </t>
+        </xpath>
+    </t>
+</templates>

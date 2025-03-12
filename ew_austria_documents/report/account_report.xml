@@ -1,0 +1,29 @@
+<odoo>
+    <record id="eagleworks_account_invoices" model="ir.actions.report">
+        <field name="name">EagleWorks Invoices</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ew_austria_documents.eagleworks_report_invoice</field>
+        <field name="report_file">ew_austria_documents.eagleworks_report_invoice</field>
+        <field name="print_report_name">(object._get_report_base_filename())</field>
+        <field name="attachment"/>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="paperformat_custom_invoice" model="report.paperformat">
+        <field name="name">EagleWorks Paper Format</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">40</field>
+        <field name="margin_bottom">25</field>
+        <field name="margin_left">20</field>
+        <field name="margin_right">20</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">30</field>
+        <field name="disable_shrinking" eval="False"/>
+        <field name="dpi">90</field>
+        <field name="report_ids" eval="[Command.link(ref('ew_austria_documents.eagleworks_account_invoices'))]"/>
+    </record>
+</odoo>

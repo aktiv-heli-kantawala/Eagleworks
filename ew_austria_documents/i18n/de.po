@@ -1,0 +1,312 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ew_custom_document
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-29 11:44+0000\n"
+"PO-Revision-Date: 2024-10-29 11:44+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ew_custom_document
+#: model_terms:ir.ui.view,arch_db:ew_custom_document.eagleworks_document_css
+msgid ""
+"&amp;.din_page {\n"
+"                        &amp;.header {\n"
+"                            .company_header {\n"
+"                                .name_container {\n"
+"                                    color:"
+msgstr ""
+
+#. module: ew_custom_document
+#: model_terms:ir.ui.view,arch_db:ew_custom_document.eagleworks_document_css
+msgid ""
+";\n"
+"                                    }\n"
+"                                }\n"
+"                            }\n"
+"                            h2 {\n"
+"                                color:"
+msgstr ""
+
+#. module: ew_custom_document
+#: model_terms:ir.ui.view,arch_db:ew_custom_document.eagleworks_document_css
+msgid ""
+";\n"
+"                                }\n"
+"                            }\n"
+"                        }\n"
+"                        &amp;.invoice_note {\n"
+"                            td {\n"
+"                                .address {\n"
+"                                    &gt; span {\n"
+"                                        color:"
+msgstr ""
+
+#. module: ew_custom_document
+#: model_terms:ir.ui.view,arch_db:ew_custom_document.eagleworks_document_css
+msgid ""
+";\n"
+"                            }\n"
+"                            .page {\n"
+"                                [name=invoice_line_table], [name=stock_move_table], .o_main_table {\n"
+"                                    th {\n"
+"                                        color:"
+msgstr ""
+
+#. module: ew_custom_document
+#: model:ir.model.fields,field_description:ew_custom_document.field_base_document_layout__bank_ids
+msgid "Banks"
+msgstr "Banken"
+
+#. module: ew_custom_document
+#: model:ir.model.fields,field_description:ew_custom_document.field_base_document_layout__city
+msgid "City"
+msgstr "Stadt"
+
+#. module: ew_custom_document
+#: model:ir.model.fields,field_description:ew_custom_document.field_base_document_layout__company_details
+msgid "Company Details"
+msgstr "Firmendetails"
+
+#. module: ew_custom_document
+#: model:ir.model,name:ew_custom_document.model_base_document_layout
+msgid "Company Document Layout"
+msgstr "Layout von Unternehmensdokumenten"
+
+#. module: ew_custom_document
+#: model:ir.model.fields,field_description:ew_custom_document.field_base_document_layout__company_registry
+msgid "Company ID"
+msgstr "Firmen-ID"
+
+#. module: ew_custom_document
+#. odoo-python
+#: code:addons/ew_custom_document/models/base_document_layout.py:0
+#, python-format
+msgid "Delivery Date"
+msgstr "Liefertermin"
+
+#. module: ew_custom_document
+#: model_terms:ir.ui.view,arch_db:ew_custom_document.external_layout_eagleworks
+msgid "District Court:"
+msgstr "Bezirksgericht:"
+
+#. module: ew_custom_document
+#. odoo-python
+#: code:addons/ew_custom_document/models/base_document_layout.py:0
+#, python-format
+msgid "Due Date"
+msgstr "Fälligkeitsdatum"
+
+#. module: ew_custom_document
+#: model_terms:ir.ui.view,arch_db:ew_custom_document.external_layout_eagleworks
+msgid "E-Mail:"
+msgstr "E-Mail:"
+
+#. module: ew_custom_document
+#: model:ir.model.fields,field_description:ew_custom_document.field_base_document_layout__eagleworks_document_template_data
+msgid "Eagleworks Document Template Data"
+msgstr "Eagleworks-Dokumentvorlagendaten"
+
+#. module: ew_custom_document
+#: model:ir.model.fields,field_description:ew_custom_document.field_base_document_layout__eagleworks_document_title
+msgid "Eagleworks Document Title"
+msgstr "Titel des Eagleworks-Dokuments"
+
+#. module: ew_custom_document
+#: model:ir.model.fields,field_description:ew_custom_document.field_base_document_layout__state_id
+msgid "Fed. State"
+msgstr "Gefüttert. Zustand"
+
+#. module: ew_custom_document
+#: model:ir.model.fields,field_description:ew_custom_document.field_base_document_layout__account_fiscal_country_id
+msgid "Fiscal Country"
+msgstr "Steuerland"
+
+#. module: ew_custom_document
+#: model:ir.model.fields,help:ew_custom_document.field_base_document_layout__report_footer
+msgid "Footer text displayed at the bottom of all reports."
+msgstr "Fußzeilentext, der unten in allen Berichten angezeigt wird."
+
+#. module: ew_custom_document
+#: model:ir.model.fields,help:ew_custom_document.field_base_document_layout__company_details
+msgid "Header text displayed at the top of all reports."
+msgstr "Kopfzeilentext, der oben in allen Berichten angezeigt wird."
+
+#. module: ew_custom_document
+#: model:ir.model.fields,field_description:ew_custom_document.field_base_document_layout__hide_header_footer_company
+msgid "Hide Report EW fields"
+msgstr "Berichts-EW-Felder ausblenden"
+
+#. module: ew_custom_document
+#: model_terms:ir.ui.view,arch_db:ew_custom_document.external_layout_eagleworks
+msgid "IBAN:"
+msgstr "IBAN:"
+
+#. module: ew_custom_document
+#. odoo-python
+#: code:addons/ew_custom_document/models/base_document_layout.py:0
+#, python-format
+msgid "Invoice"
+msgstr "Rechnung"
+
+#. module: ew_custom_document
+#. odoo-python
+#: code:addons/ew_custom_document/models/base_document_layout.py:0
+#, python-format
+msgid "Invoice Date"
+msgstr "Rechnung"
+
+#. module: ew_custom_document
+#. odoo-python
+#: code:addons/ew_custom_document/models/base_document_layout.py:0
+#, python-format
+msgid "Invoice No."
+msgstr "Rechnungsnummer."
+
+#. module: ew_custom_document
+#. odoo-python
+#: code:addons/ew_custom_document/models/base_document_layout.py:0
+#, python-format
+msgid "Reference"
+msgstr "Referenz"
+
+#. module: ew_custom_document
+#: model:ir.model.fields,field_description:ew_custom_document.field_base_document_layout__report_footer
+msgid "Report Footer"
+msgstr "Fußzeile des Berichts"
+
+#. module: ew_custom_document
+#: model:ir.model.fields,field_description:ew_custom_document.field_base_document_layout__street
+msgid "Street"
+msgstr "Straße"
+
+#. module: ew_custom_document
+#: model:ir.model.fields,field_description:ew_custom_document.field_base_document_layout__street2
+msgid "Street2"
+msgstr "Straße2"
+
+#. module: ew_custom_document
+#: model_terms:ir.ui.view,arch_db:ew_custom_document.external_layout_eagleworks
+msgid "Tax ID"
+msgstr "Steuer-ID"
+
+#. module: ew_custom_document
+#: model_terms:ir.ui.view,arch_db:ew_custom_document.external_layout_eagleworks
+msgid "Tel.:"
+msgstr "Tel.:"
+
+#. module: ew_custom_document
+#: model:ir.model.fields,help:ew_custom_document.field_base_document_layout__account_fiscal_country_id
+msgid "The country to use the tax reports from for this company"
+msgstr "Das Land, aus dem die Steuerberichte für dieses Unternehmen verwendet werden sollen"
+
+#. module: ew_custom_document
+#: model:ir.model.fields,help:ew_custom_document.field_base_document_layout__company_registry
+msgid ""
+"The registry number of the company. Use it if it is different from the Tax "
+"ID. It must be unique across all partners of a same country"
+msgstr ""
+
+#. module: ew_custom_document
+#: model_terms:ir.ui.view,arch_db:ew_custom_document.external_layout_eagleworks
+msgid "UID Number:"
+msgstr "UID-Nummer:"
+
+#. module: ew_custom_document
+#: model_terms:ir.ui.view,arch_db:ew_custom_document.external_layout_eagleworks
+msgid "Website:"
+msgstr "Webseite:"
+
+#. module: ew_custom_document
+#: model:ir.model.fields,field_description:ew_custom_document.field_base_document_layout__zip
+msgid "Zip"
+msgstr "Zip"
+
+#. module: ew_custom_document
+#: model_terms:ir.ui.view,arch_db:ew_custom_document.external_layout_eagleworks
+msgid "Sender:"
+msgstr "Absender:"
+
+#. module: ew_custom_document
+#: model_terms:ir.ui.view,arch_db:ew_custom_document.external_layout_eagleworks
+msgid "Logo"
+msgstr "Logo"
+
+#. module: ew_custom_document
+#: model_terms:ir.ui.view,arch_db:ew_custom_document.external_layout_eagleworks
+msgid "Page: <span class=\"page\"/> of <span class=\"topage\"/>"
+msgstr "Seite: <span class=\"page\"/> von <span class=\"topage\"/>"
+
+#. module: ew_custom_document
+#: model_terms:ir.ui.view,arch_db:ew_custom_document.external_layout_eagleworks
+msgid ""
+"<span>\n"
+"                                        <strong>Reference</strong>\n"
+"                                    </span>"
+msgstr ""
+"<span>\n"
+"                            <strong>Referenz</strong>\n"
+"                        </span>"
+
+#. module: ew_custom_document
+#: model_terms:ir.ui.view,arch_db:ew_custom_document.external_layout_eagleworks
+msgid "<span>Customer Code</span>"
+msgstr "<span>Kundencode</span>"
+
+#. module: ew_custom_document
+#: model_terms:ir.ui.view,arch_db:ew_custom_document.external_layout_eagleworks
+msgid "<span>Delivery Date</span>"
+msgstr "<span>Liefertermin</span>"
+
+#. module: ew_custom_document
+#: model_terms:ir.ui.view,arch_db:ew_custom_document.external_layout_eagleworks
+msgid "<span>Due Date</span>"
+msgstr "<span>Fälligkeitsdatum</span>"
+
+#. module: ew_custom_document
+#: model_terms:ir.ui.view,arch_db:ew_custom_document.external_layout_eagleworks
+msgid "<span>Incoterm</span>"
+msgstr "<span>Incoterms</span>"
+
+#. module: ew_custom_document
+#: model_terms:ir.ui.view,arch_db:ew_custom_document.external_layout_eagleworks
+msgid "<span>Invoice No</span>"
+msgstr "<span>Rechnungsnummer</span>"
+
+#. module: ew_custom_document
+#: model_terms:ir.ui.view,arch_db:ew_custom_document.external_layout_eagleworks
+msgid "<span>Order number</span>"
+msgstr "<span>Bestellnummer</span>"
+
+#. module: ew_custom_document
+#: model_terms:ir.ui.view,arch_db:ew_custom_document.external_layout_eagleworks
+msgid "<span>Performance period</span>"
+msgstr "<span>Leistungszeitraum</span>"
+
+#. module: ew_custom_document
+#: model_terms:ir.ui.view,arch_db:ew_custom_document.external_layout_eagleworks
+msgid "Credit Note Date"
+msgstr "Datum der Gutschrift"
+
+#. module: ew_custom_document
+#: model_terms:ir.ui.view,arch_db:ew_custom_document.external_layout_eagleworks
+msgid "Date"
+msgstr "Datum"
+
+#. module: ew_custom_document
+#: model_terms:ir.ui.view,arch_db:ew_custom_document.external_layout_eagleworks
+msgid "Invoice Date"
+msgstr "Rechnungsdatum"
+
+#. module: ew_custom_document
+#: model_terms:ir.ui.view,arch_db:ew_custom_document.external_layout_eagleworks
+msgid "Receipt Date"
+msgstr "Empfangsdatum"

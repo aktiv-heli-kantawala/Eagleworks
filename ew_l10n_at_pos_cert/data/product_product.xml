@@ -1,0 +1,11 @@
+<odoo noupdate="1">
+    <record id="product_null_receipt" model="product.product">
+        <field name="name">Null Receipt</field>
+        <field name="list_price">0</field>
+        <field name="available_in_pos">1</field>
+        <field name="sale_ok">1</field>
+        <field name="purchase_ok">0</field>
+        <field name="type">service</field>
+        <field name="taxes_id" eval="[Command.clear()]"/>
+    </record>
+</odoo>

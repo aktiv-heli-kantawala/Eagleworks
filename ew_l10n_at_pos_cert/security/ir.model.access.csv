@@ -1,0 +1,5 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+signature_device,signature_device,model_ew_l10n_at_pos_cert_signature_device,account.group_account_manager,1,1,1,1
+register,register,model_ew_l10n_at_pos_cert_register,account.group_account_manager,1,1,1,1
+fon_message,fon_message,model_ew_l10n_at_pos_cert_fon_message,account.group_account_manager,1,1,1,1
+dep_check,dep_check,ew_l10n_at_pos_cert.model_ew_l10n_at_pos_cert_dep_check,account.group_account_manager,1,1,1,1

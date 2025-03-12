@@ -1,0 +1,290 @@
+<odoo>
+    <!-- New report paperformat for EagleWorks format -->
+    <record id="paperformat_eagleworks_document" model="report.paperformat">
+        <field name="name">EagleWorks Document Paper Format</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">40</field>
+        <field name="margin_bottom">25</field>
+        <field name="margin_left">20</field>
+        <field name="margin_right">20</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">30</field>
+        <field name="disable_shrinking" eval="False"/>
+        <field name="dpi">90</field>
+    </record>
+
+    <!-- New report layout for EagleWorks format just like DIN 5008 -->
+    <template id="external_layout_eagleworks">
+        <div class="ew_doc_temp">
+            <t t-if="not o" t-set="o" t-value="doc"/>
+            <t t-if="not company">
+                <!-- Multicompany -->
+                <t t-if="company_id">
+                    <t t-set="company" t-value="company_id"/>
+                </t>
+                <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                    <t t-set="company" t-value="o.company_id.sudo()"/>
+                </t>
+                <t t-else="else">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+            </t>
+
+            <div t-attf-class="header clearfix">
+                <div class="row">
+                    <div class="mb4">
+                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" class="ew_company_logo float-end" style="max-height: 160px;" alt="Logo"/>
+                    </div>
+                </div>
+            </div>
+            <div t-attf-class="article o_report_layout_standard ew_din_page {{  'o_report_layout_background' if company.layout_background in ['Geometric', 'Custom']  else  '' }}" t-attf-style="font-size:20px;background-image: url({{ 'data:image/png;base64,%s' % company.layout_background_image.decode('utf-8') if company.layout_background_image and company.layout_background == 'Custom' else '/base/static/img/bg_background_template.jpg' if company.layout_background == 'Geometric' else ''}});" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <!-- This div ensures that the address is not cropped by the header. -->
+                <div class="d-flex flex-wrap" id="table_container">
+                    <table id="ew_address_section" t-if="not skip_headers" class="din_company_info table-borderless col-7 d-flex flex-fill align-self-start" >
+                        <tr>
+                            <td style="padding-top: 13mm;">
+                                <p style="font-size: 60%;">
+                                    Sender: <t t-out="company.name"/>, <t t-out="company.zip"/> <t t-out="company.city"/>
+                                </p>
+                                <hr/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="address">
+                                    <t t-if="o and 'l10n_din5008_addresses' in o" t-set="address">
+                                        <address class="mb-0" t-field="o.partner_id.commercial_partner_id" t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'/>
+                                    </t>
+                                    <div t-if="address">
+                                        <t t-out="address"/>
+                                    </div>
+                                    <div t-else="fallback_address">
+                                        <t t-out="fallback_address"
+                                           t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table name="ew_invoice_details_section" t-if="o and o._name == 'account.move'" class="table-borderless col-5 d-flex flex-fill" style="padding-top:26mm;">
+                        <tr name="invoice_number" t-if="o.name">
+                            <td style="padding-right: 50px;">
+                                <span>Invoice No</span>
+                            </td>
+                            <td>
+                                <span t-field="o.name"/>
+                            </td>
+                        </tr>
+
+                        <tr name="invoice_date" t-if="o.invoice_date">
+                            <td style="padding-right: 50px;">
+                                <span>
+                                    <t t-if="o.move_type == 'out_invoice'">Invoice Date</t>
+                                    <t t-elif="o.move_type == 'out_refund'">Credit Note Date</t>
+                                    <t t-elif="o.move_type == 'out_receipt'">Receipt Date</t>
+                                    <t t-else="">Date</t>
+                                </span>
+                            </td>
+
+                            <td>
+                                <span t-field="o.invoice_date"/>
+                            </td>
+                        </tr>
+
+                        <tr name="due_date" t-if="o.invoice_date_due and o.move_type == 'out_invoice' and o.state == 'posted'">
+                            <td style="padding-right: 50px;">
+                                <span>Due Date</span>
+                            </td>
+
+                            <td>
+                                <span t-field="o.invoice_date_due"/>
+                            </td>
+                        </tr>
+
+                        <tr name="delivery_date" t-if="o.delivery_date">
+                            <td style="padding-right: 50px;">
+                                <span>Delivery Date</span>
+                            </td>
+
+                            <td>
+                                <span t-field="o.delivery_date"/>
+                            </td>
+                        </tr>
+
+                        <tr name="enable_service_period" t-if="o.enable_service_period">
+                            <td style="padding-right: 50px;">
+                                <span>Performance period</span>
+                            </td>
+
+                            <td>
+                                <span t-field="o.service_period_start"/> - <span t-field="o.service_period_end"/>
+                            </td>
+                        </tr>
+
+                        <tr name="not_enable_service_period" t-if="not o.enable_service_period and o.service_date">
+                            <td style="padding-right: 50px;">
+                                <span>Performance period</span>
+                            </td>
+
+                            <td>
+                                <span t-field="o.service_date"/>
+                            </td>
+                        </tr>
+
+                        <tr name="origin" t-if="o.invoice_origin">
+                            <td style="padding-right: 50px;">
+                                <span>Order number</span>
+                            </td>
+
+                            <td>
+                                <span t-field="o.invoice_origin"/>
+                            </td>
+                        </tr>
+
+                        <tr name="customer_code" t-if="o.partner_id.ref">
+                            <td style="padding-right: 50px;">
+                                <span>Customer Code</span>
+                            </td>
+
+                            <td>
+                                <span t-field="o.partner_id.ref"/>
+                            </td>
+                        </tr>
+
+                        <tr name="reference" t-if="o.ref">
+                            <td style="padding-right: 50px;">
+                                <span>
+                                    <strong>Reference</strong>
+                                </span>
+                            </td>
+
+                            <td>
+                                <span t-field="o.ref"/>
+                            </td>
+                        </tr>
+
+                        <tr name="incoterm_id" t-if="o.invoice_incoterm_id">
+                            <td style="padding-right: 50px;">
+                                <span>Incoterm</span>
+                            </td>
+
+                            <td>
+                                <p t-if="o.incoterm_location">
+                                    <span t-field="o.invoice_incoterm_id.code"/>
+                                    <br/>
+                                    <span t-field="o.incoterm_location"/>
+                                </p>
+                                <span t-else="" t-field="o.invoice_incoterm_id.code" class="m-0"/>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style="addping-right: 50px;">
+                                <div t-if="o.partner_id.commercial_partner_id.vat" id="partner_vat_address_same_as_shipping">
+                                    <span>Ihre UID</span>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div t-if="o.partner_id.commercial_partner_id.vat" id="partner_vat_address_same_as_shipping">
+                                    <span t-field="o.partner_id.commercial_partner_id.vat"/>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <br/>
+                <h2 t-out="layout_document_title"/>
+
+                <t t-out="0"/>
+            </div>
+
+            <div t-attf-class="ew_din_page_footer din_page footer o_company_#{company.id}_layout #{'ew_din_page_pdf' if report_type == 'pdf' else ''}">
+                <div class="text-end page_number">
+                    <div class="text-muted">
+                        Page: <span class="page"/> of <span class="topage"/>
+                    </div>
+                </div>
+                <div class="company_details">
+                    <table class="table-borderless">
+                        <tr>
+                            <t t-if="company.name or company.street or company.zip or company.city or company.country_id">
+                                <td class="text-start">
+                                    <span t-if="company.name"><t t-out="company.name"/><br/></span>
+                                    <span t-if="company.street"><t t-out="company.street"/><br/></span>
+                                    <span t-if="company.zip  or company.city"><t t-out="company.zip"/> <t t-out="company.city"/><br/></span>
+                                    <span t-if="company.country_id"><t t-out="company.country_id.name"/><br/></span>
+                                </td>
+                            </t>
+
+                            <t t-if="company.phone or company.email or company.website">
+                                <td class="text-start">
+                                    <span t-if="company.phone">Tel.: <span t-out="company.phone"/><br/></span>
+                                    <span t-if="company.email">E-Mail: <span t-out="company.email"/><br/></span>
+                                    <span t-if="company.website">Website: <span t-out="company.website"/></span>
+                                </td>
+                            </t>
+
+                            <t t-if="company.vat">
+                                <td class="text-start">
+                                    <span t-if="company.district_court">Bezirksgericht: <span t-out="company.district_court"/><br/></span>
+                                    <span t-if="company.vat">UID Number: <span t-out="company.vat"/></span>
+                                </td>
+                            </t>
+
+                            <t t-if="company.partner_id and company.partner_id.bank_ids">
+                                <td class="text-start">
+                                    <t t-if="company.partner_id and company.partner_id.bank_ids">
+                                        <t t-set="account" t-value="company.partner_id.bank_ids[0]"/>
+                                        <span t-if="account.bank_id"><t t-out="account.bank_id.name"/><br/></span>
+                                        <span t-if="account.acc_number">IBAN: <t t-out="account.acc_number"/><br/></span>
+                                        <span t-if="account.bank_id.bic">BIC: <t t-out="account.bank_id.bic"/></span>
+                                    </t>
+                                </td>
+                            </t>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </template>
+
+    <template id="eagleworks_document_css" inherit_id="web.styles_company_report">
+            <xpath expr="//t[@t-elif]" position="before">
+                <t t-elif="layout == 'ew_austria_documents.external_layout_eagleworks'">
+                    &amp;.din_page {
+                        &amp;.header {
+                            .company_header {
+                                .name_container {
+                                    color: <t t-out='primary'/>;
+                                }
+                            }
+                        }
+                        &amp;.invoice_note {
+                            td {
+                                .address {
+                                    > span {
+                                        color: <t t-out='secondary'/>;
+                                    }
+                                }
+                            }
+                            h2 {
+                                color: <t t-out='primary'/>;
+                            }
+                            .page {
+                                [name=invoice_line_table], [name=stock_move_table], .o_main_table {
+                                    th {
+                                        color: <t t-out='secondary'/>;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                </t>
+            </xpath>
+        </template>
+</odoo>

@@ -1,0 +1,22 @@
+.pos-receipt .l10n-at-info {
+    overflow: auto;
+    font-size: 0.8em;
+    word-break: break-all;
+}
+
+.pos-receipt .l10n-at-info .pos-receipt-right-align {
+    width: 45%;
+    text-align: right;
+}
+
+.pos-receipt .l10n-at-info .l10n-at-info-long-value {
+    margin-left: 15px;
+}
+
+.pos-receipt .l10n-at-info .l10n-at-info-long-value {
+    margin-left: 15px;
+}
+
+.no-footer-dialog .modal-footer {
+    display: none !important;
+}

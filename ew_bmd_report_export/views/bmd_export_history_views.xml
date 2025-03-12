@@ -1,0 +1,65 @@
+<odoo>
+    <!-- Tree view: BMD Export History -->
+    <record model="ir.ui.view" id="view_bmd_report_export_history_tree">
+        <field name="name">view.bmd.report.export.history.tree</field>
+        <field name="model">bmd.export.history</field>
+        <field name="arch" type="xml">
+            <list default_order="create_date desc">
+                <field name="report" string="Choose Report"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="export_data"/>
+                <field name="date_from" widget="daterange" string="Dates"
+                       options="{'end_date_field': 'date_to'}"/>
+                <field name="user_id" options='{"no_open": True}'/>
+                <field name="fname" column_invisible="1"/>
+                <field name="file_datas" filename="fname" widget="binary"/>
+            </list>
+        </field>
+    </record>
+    <!-- Form view: BMD Export History -->
+    <record model="ir.ui.view" id="view_bmd_report_export_history_form">
+        <field name="name">view.bmd.report.export.history.form</field>
+        <field name="model">bmd.export.history</field>
+        <field name="arch" type="xml">
+            <form string="Export - BMD Reports">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="report" string="Choose Report"/>
+                            <field name="report_type"/>
+                        </group>
+                        <group>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="export_data" widget="radio"/>
+                            <field name="user_id" options='{"no_open": True}' readonly="1"/>
+                            <field name="export_date" readonly="1"/>
+                            <div/>
+                        </group>
+                        <group>
+                            <field name="date_from" widget="daterange" string="Dates"
+                                   options="{'end_date_field': 'date_to'}"/>
+                            <field name="date_to" invisible="1"/>
+                            <field name="fname" invisible="1"/>
+                            <field name="file_datas" filename="fname" widget="binary" readonly="1"/>
+                        </group>
+                         <div>
+                            <button name="export_report" type="object" class="btn btn-primary" string="Generate Report"/>
+                        </div>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- Window Action: BMD Export History -->
+    <record id="action_bmd_report_export_history" model="ir.actions.act_window">
+        <field name="name">BMD Reports History</field>
+        <field name="res_model">bmd.export.history</field>
+        <field name="view_mode">list,form</field>
+        <field name="target">current</field>
+    </record>
+    <!-- Menuitems : BMD Export History -->
+    <menuitem id="menu_bmd_report_export_history" name="BMD Reports History"
+              action="action_bmd_report_export_history"
+              parent="bmd_export_main_menu"
+              sequence="1"/>
+</odoo>

@@ -1,0 +1,14 @@
+<odoo noupdate="1">
+    <record id="seq_bmd_creditor_number" model="ir.sequence">
+        <field name="name">Creditor Number For Partner</field>
+        <field name="code">res.partner.creditor</field>
+        <field name="prefix">3</field>
+        <field name="padding">5</field>
+    </record>
+    <record id="seq_bmd_debtor_number" model="ir.sequence">
+        <field name="name">Debtor Number For Partner</field>
+        <field name="code">res.partner.debtor</field>
+        <field name="prefix">2</field>
+        <field name="padding">5</field>
+    </record>
+</odoo>

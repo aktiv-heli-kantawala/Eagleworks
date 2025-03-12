@@ -1,0 +1,22 @@
+<odoo>
+    <record model="ir.ui.view" id="view_bmd_res_partner_form">
+        <field name="name">res.partner.bmd.view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <form>
+                <xpath expr="//div[hasclass('o_address_format')]" position="after">
+                    <field name="bmd_exported_customer" invisible="1"/>
+                    <field name="bmd_reexport_customer" invisible="1"/>
+                    <field name="bmd_exported_supplier" invisible="1"/>
+                    <field name="bmd_reexport_supplier" invisible="1"/>
+                </xpath>
+            </form>
+            <xpath expr="//sheet//group[1]//group[1]" position="inside"> 
+                <field name='contact_type' readonly="0" invisible="1"/>
+                <field name="debtor_number" readonly="0" invisible="contact_type in ['vendor','none']"/>
+                <field name="creditor_number" readonly="0" invisible="contact_type in ['customer','none']"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

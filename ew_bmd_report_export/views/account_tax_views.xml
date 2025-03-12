@@ -1,0 +1,13 @@
+<odoo>
+    <!-- Inherit Tax for add BMD Steuercode -->
+    <record id="ew_bmd_report_export_inherit_view_tax_form" model="ir.ui.view">
+        <field name="name">ew.bmd.report.export.inherit.view.tax.form</field>
+        <field name="model">account.tax</field>
+        <field name="inherit_id" ref="account.view_tax_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group/group[2]/div" position="after">
+                <field name="bmd_steuercode"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

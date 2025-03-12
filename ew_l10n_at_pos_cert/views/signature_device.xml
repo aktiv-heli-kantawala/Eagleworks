@@ -1,0 +1,75 @@
+<odoo>
+    <record id="view_signature_device_search" model="ir.ui.view">
+        <field name="name">ew_l10n_at_pos_cert.signature_device.search</field>
+        <field name="model">ew_l10n_at_pos_cert.signature_device</field>
+        <field name="arch" type="xml">
+            <search string="Signature Devices">
+                <field name="name"/>
+                <field name="username"/>
+                <field name="certificate_serial_number"/>
+                <field name="state"/>
+                <group expand="1" string="Group By">
+                    <filter name="groupby_state" context="{'group_by' : 'state'}" string="ZDA"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="view_signature_device_tree" model="ir.ui.view">
+        <field name="name">ew_l10n_at_pos_cert.signature_device.tree</field>
+        <field name="model">ew_l10n_at_pos_cert.signature_device</field>
+        <field name="arch" type="xml">
+            <list string="Signature Devices">
+                <field name="name"/>
+                <field name="state"/>
+                <field name="username"/>
+                <field name="certificate_serial_number"/>
+            </list>
+        </field>
+    </record>
+    <record id="view_signature_device_form" model="ir.ui.view">
+        <field name="name">ew_l10n_at_pos_cert.signature_device.form</field>
+        <field name="model">ew_l10n_at_pos_cert.signature_device</field>
+        <field name="arch" type="xml">
+            <form string="Signature Device">
+                <header>
+                    <button name="action_refresh_information" type="object" string="Refresh"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group name="configuration" string="Configuration">
+                            <field name="state"/>
+                            <field name="username"/>
+                            <field name="password"/>
+                        </group>
+                        <group name="information" string="Information">
+                            <field name="zda_identity"/>
+                            <field name="algorithm"/>
+                            <field name="certificate_serial_number"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Certificate Issuer">
+                            <field name="certificate_issuer" nolabel="1" class="w-100" style="word-wrap: break-word"/>
+                        </page>
+                        <page string="Certificate">
+                            <field name="certificate" nolabel="1" class="w-100" style="word-wrap: break-word"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- Action Signature Devices  -->
+    <record id="action_signature_device" model="ir.actions.act_window">
+        <field name="name">Signature Devices</field>
+        <field name="res_model">ew_l10n_at_pos_cert.signature_device</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

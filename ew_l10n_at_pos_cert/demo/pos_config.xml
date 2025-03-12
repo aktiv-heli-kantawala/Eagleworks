@@ -1,0 +1,8 @@
+<odoo>
+    <record id="pos_config_rksv1" model="pos.config">
+        <field name="name">Shop with RKSV</field>
+    </record>
+    <record id="pos_config_rksv2" model="pos.config">
+        <field name="name">Shop with two RKSV registers</field>
+    </record>
+</odoo>

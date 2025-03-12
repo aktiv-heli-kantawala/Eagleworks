@@ -1,0 +1,23 @@
+<odoo>
+    <record model="ir.ui.view" id="view_bmd_account_move_line_form">
+        <field name="name">account.move.line.bmd.view</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_move_line_form"/>
+        <field name="arch" type="xml">
+            <form>
+                <xpath expr="//group" position="inside">
+                    <field name="bmd_exported_general_ledger" invisible="1" />
+                    <field name="bmd_reexport_general_ledger" invisible="1" />
+                    <field name="bmd_exported_out_move" invisible="1" />
+                    <field name="bmd_reexport_out_move" invisible="1" />
+                    <field name="bmd_exported_in_move" invisible="1" />
+                    <field name="bmd_reexport_in_move" invisible="1" />
+                    <field name="bmd_exported_bank_move" invisible="1" />
+                    <field name="bmd_reexport_bank_move" invisible="1" />
+                    <field name="bmd_exported_cash_move" invisible="1" />
+                    <field name="bmd_reexport_cash_move" invisible="1" />
+                </xpath>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,89 @@
+<odoo>
+    <record id="view_register_search" model="ir.ui.view">
+        <field name="name">ew_l10n_at_pos_cert.register.search</field>
+        <field name="model">ew_l10n_at_pos_cert.register</field>
+        <field name="arch" type="xml">
+            <search string="Registers">
+                <field name="name"/>
+                <field name="pos_config_id"/>
+                <field name="signature_device_id"/>
+                <group expand="1" string="Group By">
+                    <filter name="groupby_signature_device_id" context="{'group_by' : 'signature_device_id'}"
+                            string="Signature Device"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="view_register_tree" model="ir.ui.view">
+        <field name="name">ew_l10n_at_pos_cert.register.tree</field>
+        <field name="model">ew_l10n_at_pos_cert.register</field>
+        <field name="arch" type="xml">
+            <list string="Registers">
+                <field name="name"/>
+                <field name="pos_config_id"/>
+                <field name="signature_device_id"/>
+                <field name="receipt_counter"/>
+            </list>
+        </field>
+    </record>
+    <record id="view_register_form" model="ir.ui.view">
+        <field name="name">ew_l10n_at_pos_cert.register.form</field>
+        <field name="model">ew_l10n_at_pos_cert.register</field>
+        <field name="arch" type="xml">
+            <form string="Register">
+                <header>
+                    <button name="action_create_dep" type="object" string="DEP"/>
+                    <button name="action_dep_check" type="object" string="DEP Check"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group name="configuration" string="Configuration">
+                            <field name="pos_config_id"/>
+                            <field name="signature_device_id"/>
+                            <field name="aes_key_b64"/>
+                        </group>
+                        <group name="signature_device" string="Signature Device">
+                            <field name="zda_identity"/>
+                            <field name="algorithm"/>
+                            <field name="certificate_serial_number"/>
+                        </group>
+                        <group name="receipts" string="Receipts">
+                            <field name="turnover"/>
+                            <field name="last_receipt_hash"/>
+                            <field name="receipt_counter"/>
+                            <field name="last_null_receipt_date"/>
+                        </group>
+                        <group name="session" string="Session">
+                            <field name="is_in_use"/>
+                            <field name="session_token"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Certificate Issuer">
+                            <field name="certificate_issuer" nolabel="1" class="w-100" style="word-wrap: break-word"/>
+                        </page>
+                        <page string="Certificate">
+                            <field name="certificate" nolabel="1" class="w-100" style="word-wrap: break-word"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="activity_ids"/>
+                    <field name="message_follower_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="action_register" model="ir.actions.act_window">
+        <field name="name">Registers</field>
+        <field name="res_model">ew_l10n_at_pos_cert.register</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

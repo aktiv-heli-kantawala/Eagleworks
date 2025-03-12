@@ -1,0 +1,8 @@
+<odoo>
+    <record id="report_layout_eagleworks" model="report.layout">
+        <field name="name">EagleWorks</field>
+        <field name="image"></field>
+        <field name="pdf"></field>
+        <field name="view_id" ref="ew_austria_documents.external_layout_eagleworks"/>
+    </record>
+</odoo>

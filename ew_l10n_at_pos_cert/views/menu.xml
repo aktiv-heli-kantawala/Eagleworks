@@ -1,0 +1,34 @@
+<odoo>
+    <menuitem
+            id="menu_action_l10n_at_cert"
+            parent="point_of_sale.menu_point_config_product"
+            name="RKSV"
+            sequence="10">
+        <menuitem
+                id="menu_action_l10n_at_signature_device"
+                action="action_signature_device"
+                name="Signature Devices"
+                sequence="10"
+        />
+        <menuitem
+                id="menu_action_l10n_at_register"
+                action="action_register"
+                name="Registers"
+                sequence="20"
+        />
+        <menuitem
+                id="menu_action_l10n_at_dep_check"
+                action="action_dep_check"
+                name="DEP Checks"
+                groups="base.group_no_one"
+                sequence="30"
+        />
+        <menuitem
+                id="menu_action_l10n_at_fon_message"
+                action="action_fon_message"
+                name="FON Messages"
+                groups="base.group_no_one"
+                sequence="40"
+        />
+    </menuitem>
+</odoo>

@@ -1,0 +1,8 @@
+<odoo>
+    <record id="signature_device_sd1" model="ew_l10n_at_pos_cert.signature_device">
+        <field name="name">SD1</field>
+        <field name="state">atrust-test</field>
+        <field name="username">u647812960</field>
+        <field name="password">m3m8jk</field>
+    </record>
+</odoo>

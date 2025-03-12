@@ -1,0 +1,66 @@
+<odoo>
+    <record model="ir.ui.view" id="view_bmd_reports_form">
+        <field name="name">bmd.reports.form</field>
+        <field name="model">bmd.reports</field>
+        <field name="priority">1</field>
+        <field name="arch" type="xml">
+            <form string="Export - BMD Reports">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="report" string="Choose Report"/>
+                            <field name="report_type"/>
+                        </group>
+                        <group>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="export_data" widget="radio"/>
+                            <div/>
+                            <div class="text-info text-nowrap d-block"
+                                 invisible="export_data != 'export_all'">This will export all the
+                                data created or modified
+                                <br/>
+                                between the selected date-range.
+                            </div>
+                        </group>
+                        <group>
+                            <field name="date_from" widget="daterange" string="Dates"
+                                   options="{'end_date_field': 'date_to'}"/>
+                            <field name="date_to" invisible="1"/>
+                        </group>
+                    </group>
+
+                    <h2 invisible="not attachment_ids">
+                        <i class="fa fa-check-circle-o text-success mr-2"/>Generated successfully
+                    </h2>
+                    <div invisible="not attachment_ids">
+                        <field name="attachment_ids" widget="many2many_binary" class="col-12"/>
+                    </div>
+                </sheet>
+                <footer>
+                    <field name="needs_regenerate" invisible="1"/>
+                    <button string="Generate Report" invisible="not needs_regenerate" type="object" name="export_report"
+                            class="btn-primary"/>
+                    <button string="Discard" type="object" name="close" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_export_bmd_reports" model="ir.actions.act_window">
+        <field name="name">Export - BMD Reports</field>
+        <field name="res_model">bmd.reports</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+    <menuitem id="menu_bmd_reports" name="BMD Reports"
+              parent="account.menu_finance_reports"
+              sequence="1"/>
+    <menuitem id="main_menu_export_bmd_reports" name="Export - BMD Reports"
+              action="action_export_bmd_reports"
+              parent="menu_bmd_reports"
+              sequence="1"/>
+    <!-- BMD APP -->
+    <menuitem name="BMD Export"
+              id="bmd_export_main_menu"
+              web_icon="ew_bmd_report_export,static/description/icon.png" sequence="60"/>
+
+</odoo>

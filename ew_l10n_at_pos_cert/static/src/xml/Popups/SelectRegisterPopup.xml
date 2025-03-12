@@ -1,0 +1,37 @@
+<templates id="template" xml:space="preserve">
+    <t t-name="ew_l10n_at_pos_cert.SelectRegisterPopup">
+        <Dialog size="'md'" contentClass="'no-footer-dialog'">
+            <t t-set-slot="header">
+                <t class="modal-title title text-center fw-bold">
+                    SELECT REGISTER
+                </t>
+            </t>
+            <div class="d-flex flex-column fs-4 p-3">
+                <t t-foreach="state.availableRegisters" t-as="register" t-key="register.id">
+                    <div class="d-flex mb-2">
+                        <!-- Register Selection Button -->
+                        <button
+                            t-att-disabled="register.is_in_use"
+                            t-on-click="() => this.selectRegister(register.id)"
+                            class="py-2 px-3  border rounded flex-grow-1"
+                            style="background-color: #d1d1d1; border: none;"
+                        >
+                            <t t-esc="register.name"/>
+                        </button>
+                        
+                        <!-- Unlock Button -->
+                        <button
+                            t-att-disabled="!register.is_in_use"
+                            t-on-click="() => this.forceUnlock(register.id)"
+                            class="py-2 px-4  border rounded ms-2"
+                            style="background-color: #ffffff; border: none;"
+                        >
+                            <i class="fa" t-att-class="register.is_in_use ? 'fa-lock' : 'fa-unlock'"></i>
+                        </button>
+                    </div>
+                </t>
+            </div>
+        </Dialog>
+    </t>
+</templates>
+ 
