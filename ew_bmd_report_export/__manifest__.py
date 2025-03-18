@@ -1,6 +1,6 @@
 {
     "name": "EagleWorks Export BMD Reports",
-    "version": "18.0.1.0.0",
+    "version": "18.0.1.0.1",
     "author": "EagleWorks GmbH",
     "license": "AGPL-3",
     "category": "Accounting/Localizations/Point of Sale",
