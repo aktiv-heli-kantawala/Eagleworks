@@ -381,7 +381,7 @@ class BMDReport(models.Model):
                 if self.env.user.has_group("base.group_multi_company"):
                     FILENAME += "_" + self.company_id.name
                 buffer = io.BytesIO()
-                if not (in_zip_attachments and out_zip_attachments):
+                if not in_zip_attachments and not out_zip_attachments:
                     # All reports zip
                     with zipfile.ZipFile(
                         buffer, "w", compression=zipfile.ZIP_DEFLATED
@@ -460,8 +460,10 @@ class BMDReport(models.Model):
                             zipfile_obj.writestr(
                                 attachment.display_name, attachment.raw
                             )
-                        zipfile_obj.writestr(in_filename, in_zip_att)
-                        zipfile_obj.writestr(out_filename, out_zip_att)
+                        if in_zip_att:
+                            zipfile_obj.writestr(in_filename, in_zip_att)
+                        if out_zip_att:
+                            zipfile_obj.writestr(out_filename, out_zip_att)
                     zip = buffer.getvalue()
                     zipDatas = base64.encodebytes(zip)
                     self.write({"file_datas": zipDatas})
