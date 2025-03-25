@@ -62,7 +62,9 @@ patch(PosOrder.prototype, {
     */
         super.recomputeOrderData(...arguments);
         var register = this.get_L10nAtRegister()
-        this.l10n_at_register_id = this.models['ew_l10n_at_pos_cert.register'].get(register.id)
+        if (this.models['ew_l10n_at_pos_cert.register']){
+            this.l10n_at_register_id = this.models['ew_l10n_at_pos_cert.register'].get(register.id)
+        }
     },
     export_for_printing() {
     /**

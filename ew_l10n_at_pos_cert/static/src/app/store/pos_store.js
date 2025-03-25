@@ -229,7 +229,7 @@ patch(PosStore.prototype, {
             }
         }
 
-        if (this.get_order().get_orderlines().length && (
+        if (this.get_order().get_orderlines().length && this.config.l10n_at_null_receipt_product_id && (
             this.get_order().get_orderlines()[0].product_id.id === this.config.l10n_at_null_receipt_product_id.id ||
             vals.product_id.id === this.config.l10n_at_null_receipt_product_id.id
         )) {
