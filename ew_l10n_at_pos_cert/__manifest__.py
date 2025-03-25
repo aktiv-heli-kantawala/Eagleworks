@@ -1,6 +1,6 @@
 {
     "name": "EagleWorks RKSV AT HSM",
-    "version": "18.0.1.0.1",
+    "version": "18.0.1.0.2",
     "author": "EagleWorks GmbH",
     "license": "Other proprietary",
     "category": "Accounting/Localizations/Point of Sale",
