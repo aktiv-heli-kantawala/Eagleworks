@@ -154,9 +154,6 @@ patch(PosStore.prototype, {
                 this.showScreen('PaymentScreen', props);
             }
         }
-        else if (!this.isL10nAtNullReceiptNecessary() && this.config.l10n_at_register_ids.length == 1){
-            this.openOpeningControl();
-        }
     },
     async _showTaxError() {
     /**
