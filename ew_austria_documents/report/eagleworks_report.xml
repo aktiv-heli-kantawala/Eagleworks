@@ -228,7 +228,7 @@
                     <table class="table-borderless">
                         <tr>
                             <t t-if="company.name or company.street or company.zip or company.city or company.country_id">
-                                <td class="text-start">
+                                <td class="text-start" style="padding-top:9pt;">
                                     <span t-if="company.name">
                                         <t t-out="company.name"/>
                                         <br/>
@@ -250,7 +250,7 @@
                             </t>
 
                             <t t-if="company.phone or company.email or company.website">
-                                <td class="text-start">
+                                <td class="text-start" style="padding-top:9pt;">
                                     <span t-if="company.phone">Tel.:
                                         <span t-out="company.phone"/>
                                         <br/>
@@ -266,7 +266,7 @@
                             </t>
 
                             <t t-if="company.vat">
-                                <td class="text-start">
+                                <td class="text-start" style="padding-top:9pt;">
                                     <span t-if="company.district_court">District Court:
                                         <span t-out="company.district_court"/>
                                         <br/>
@@ -278,7 +278,7 @@
                             </t>
 
                             <t t-if="company.partner_id and company.partner_id.bank_ids">
-                                <td class="text-start">
+                                <td class="text-start" style="padding-top:9pt;">
                                     <t t-if="company.partner_id and company.partner_id.bank_ids">
                                         <t t-set="account" t-value="company.partner_id.bank_ids[0]"/>
                                         <span t-if="account.bank_id">
