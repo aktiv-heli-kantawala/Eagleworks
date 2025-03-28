@@ -1,61 +1,102 @@
 <odoo>
     <template id="eagleworks_external_layout">
-            <t t-if="not o" t-set="o" t-value="doc"/>
-            <t t-if="not company">
-                <!-- Multicompany -->
-                <t t-if="company_id">
-                    <t t-set="company" t-value="company_id"/>
-                </t>
-                <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
-                    <t t-set="company" t-value="o.company_id.sudo()"/>
-                </t>
-                <t t-else="else">
-                    <t t-set="company" t-value="res_company"/>
-                </t>
+        <t t-if="not o" t-set="o" t-value="doc"/>
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
             </t>
+            <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
 
-            <div t-attf-class="header clearfix">
-                <div class="row">
-                    <div class="mb4">
-                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" class="float-end" style="max-height: 80px;" alt="Logo"/>
-                    </div>
+        <div t-attf-class="header clearfix">
+            <div class="row">
+                <div class="mb4">
+                    <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" class="float-end"
+                         style="max-height: 80px;" alt="Logo"/>
                 </div>
             </div>
-            <div t-attf-class="article o_report_layout_standard {{  'o_report_layout_background' if company.layout_background in ['Geometric', 'Custom']  else  '' }}" t-attf-style="font-size:20px;background-image: url({{ 'data:image/png;base64,%s' % company.layout_background_image.decode('utf-8') if company.layout_background_image and company.layout_background == 'Custom' else '/base/static/img/bg_background_template.jpg' if company.layout_background == 'Geometric' else ''}});" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
-                    <!-- This div ensures that the address is not cropped by the header. -->
-                    <t t-call="web.address_layout"/>
-                <t t-out="0"/>
-            </div>
+        </div>
+        <div t-attf-class="article o_report_layout_standard {{  'o_report_layout_background' if company.layout_background in ['Geometric', 'Custom']  else  '' }}"
+             t-attf-style="font-size:20px;background-image: url({{ 'data:image/png;base64,%s' % company.layout_background_image.decode('utf-8') if company.layout_background_image and company.layout_background == 'Custom' else '/base/static/img/bg_background_template.jpg' if company.layout_background == 'Geometric' else ''}});"
+             t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+             t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <!-- This div ensures that the address is not cropped by the header. -->
+            <t t-call="web.address_layout"/>
+            <t t-out="0"/>
+        </div>
 
-            <div t-attf-class="footer d-block">
-                <div class="text-center" style="border-top: 1px solid black; clear: both; font-size: 13px;">
-                    <table class="table table-borderless">
-                        <tr>
-                             <td class="text-start">
-                                <span><t t-out="company.name"/><br/></span>
-                                <span><t t-out="company.street"/> </span>
-                                <span t-if="company.street2"><t t-out="company.street2"/></span><br/>
-                                <span><t t-out="company.zip"/></span>
-                                <span t-if="company.city"> <t t-out="company.city"/></span><br/>
-                                <span><t t-out="company.country_id.name"/></span>
-                            </td>
-                            <td class="text-start">
-                                <span>Tel.: <span t-out="company.phone"/><br/></span>
-                                <span>E-Mail: <span t-out="company.email"/><br/></span>
-                                <span>Website: <span t-out="company.website"/></span>
-                            </td>
-                            <td class="text-start">
-                                <span t-if="company.district_court">Bezirksgericht: <t t-out="company.district_court"/><br/></span>
-                                <span t-if="company.partner_id.vat">UID-Nummer: <t t-out="company.vat"/><br/></span>
-                            </td>
-                            <td class="text-start">
-                                <span t-if="o.partner_bank_id.bank_name"><t t-out="o.partner_bank_id.bank_name"/><br/></span>
-                                <span t-if="o.partner_bank_id.sanitized_acc_number">IBAN: <t t-out="o.partner_bank_id.sanitized_acc_number"/><br/></span>
-                                <span t-if="o.partner_bank_id.bank_bic">BIC: <t t-out="o.partner_bank_id.bank_bic"/></span>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+        <div t-attf-class="footer d-block">
+            <div class="text-center" style="border-top: 1px solid black; clear: both; font-size: 13px;">
+                <table class="table table-borderless">
+                    <tr>
+                        <td class="text-start">
+                            <span>
+                                <t t-out="company.name"/>
+                                <br/>
+                            </span>
+                            <span>
+                                <t t-out="company.street"/>
+                            </span>
+                            <span t-if="company.street2">
+                                <t t-out="company.street2"/>
+                            </span>
+                            <br/>
+                            <span>
+                                <t t-out="company.zip"/>
+                            </span>
+                            <span t-if="company.city">
+                                <t t-out="company.city"/>
+                            </span>
+                            <br/>
+                            <span>
+                                <t t-out="company.country_id.name"/>
+                            </span>
+                        </td>
+                        <td class="text-start">
+                            <span>Tel.:
+                                <span t-out="company.phone"/>
+                                <br/>
+                            </span>
+                            <span>E-Mail:
+                                <span t-out="company.email"/>
+                                <br/>
+                            </span>
+                            <span>Website:
+                                <span t-out="company.website"/>
+                            </span>
+                        </td>
+                        <td class="text-start">
+                            <span t-if="company.district_court">Bezirksgericht:
+                                <t t-out="company.district_court"/>
+                                <br/>
+                            </span>
+                            <span t-if="company.partner_id.vat">UID-Nummer:
+                                <t t-out="company.vat"/>
+                                <br/>
+                            </span>
+                        </td>
+                        <td class="text-start">
+                            <span t-if="o.partner_bank_id.bank_name">
+                                <t t-out="o.partner_bank_id.bank_name"/>
+                                <br/>
+                            </span>
+                            <span t-if="o.partner_bank_id.sanitized_acc_number">IBAN:
+                                <t t-out="o.partner_bank_id.sanitized_acc_number"/>
+                                <br/>
+                            </span>
+                            <span t-if="o.partner_bank_id.bank_bic">BIC:
+                                <t t-out="o.partner_bank_id.bank_bic"/>
+                            </span>
+                        </td>
+                    </tr>
+                </table>
             </div>
-        </template>
+        </div>
+    </template>
 </odoo>
