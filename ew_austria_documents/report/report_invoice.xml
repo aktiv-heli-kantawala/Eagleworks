@@ -1,6 +1,8 @@
 <odoo>
     <template id="ew_custom_report_invoice_document" inherit_id="account.report_invoice_document">
-        <xpath expr="//div[@id='informations']" position="replace"/>
+        <xpath expr="//div[@id='informations']" position="attributes">
+            <attribute name="class" add="d-none" separator=" "/>
+        </xpath>
     </template>
     <template id="report_invoice_document">
         <t t-call="ew_austria_documents.eagleworks_external_layout">
