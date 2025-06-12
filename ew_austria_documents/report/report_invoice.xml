@@ -314,7 +314,7 @@
                             <div class="oe_structure"/>
                         </t>
                     </div>
-                    <div style="margin-top:550px;" t-if="o.move_type in ('out_invoice', 'in_refund')">
+                    <div class="mb-3" t-if="o.move_type in ('out_invoice', 'in_refund')">
                         <p name="payment_communication">
                             Please use the following purpose of payment:
                             <span class="fw-bold" t-field="o.payment_reference">INV/2023/00001</span>

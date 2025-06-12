@@ -527,3 +527,12 @@ msgstr "fällig, wenn vor"
 #: model_terms:ir.ui.view,arch_db:ew_austria_documents.report_invoice_document
 msgid "units"
 msgstr "Einheiten"
+
+#. module: ew_austria_documents
+#: model_terms:ir.ui.view,arch_db:ew_austria_documents.report_invoice_document
+msgid ""
+"<br/>\n"
+"                                on this account:"
+msgstr ""
+"<br/>\n"
+"                                auf diesem Konto:"
