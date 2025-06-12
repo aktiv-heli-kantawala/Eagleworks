@@ -408,4 +408,9 @@
             </t>
         </t>
     </template>
+    <template id="ew_document_tax_totals_company_currency_template"
+              inherit_id="account.document_tax_totals_company_currency_template">
+        <xpath expr="//div[@class='mb-2 mt-3 border p-2 avoid-page-break-inside totals_taxes_company_currency']"
+               position="replace"/>
+    </template>
 </odoo>
